@@ -1,0 +1,38 @@
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    </button>
+    <a href="" (click)="moveToHome()" style="text-decoration:none;"><span routerLinkActive="active"
+        style="cursor: poineter;color: rgb(240, 87, 17); font-weight: bolder;font-size: 150%;">URL Shortner</span>
+    </a> <span class="example-spacer"></span>
+    <button mat-icon-button class="menuForLogin" [matMenuTriggerFor]="menu" mat-icon-button aria-label="Example icon-button with a menu">
+      <mat-icon  *ngIf="!isUser" id="dropdownIcon">more_vert</mat-icon>
+      <div style=" display: flex;font-size: 150%;">
+        <mat-icon *ngIf="isUser" id="dropdownIcon_login">account_circle</mat-icon>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span> <span *ngIf="isUser">{{firstName}}</span>
+      </div>
+    </button>
+    <div class="mat-menu">
+        <mat-menu #menu="matMenu">
+            <button *ngIf="!isUser && !this.isLoginPge" [routerLink]="['/login']" routerLinkActive="active" mat-menu-item>
+          <mat-icon>email</mat-icon>
+          <span>Login</span>
+        </button>
+            <button *ngIf="isUser" mat-menu-item (click)="loggedOut()">
+          <mat-icon>email</mat-icon>
+          <span>Logout</span>
+        </button>
+            <button mat-menu-item *ngIf="isUser && !isResetPwdPge" [routerLink]="['/reset-password/'+id]" routerLinkActive="active">
+          <mat-icon>edit</mat-icon>
+          <span>Reset Password</span>
+        </button>
+            <button *ngIf="!isUser && this.isLoginPge" [routerLink]="['/']" routerLinkActive="active" mat-menu-item>
+          <mat-icon>cancel</mat-icon>
+          <span>Cancel</span>
+        </button>
+
+        </mat-menu>
+    </div>
+    <!-- <button *ngIf="isUser" mat-icon-button class="menuForLogin" mat-icon-button aria-label="Example icon-button with a menu" (click)="loggedOut()"><h2>Logout</h2>
+      </button> -->
+
+</mat-toolbar>

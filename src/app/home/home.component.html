@@ -1,0 +1,71 @@
+<app-header></app-header>
+
+<h2 style="margin-left:23%;margin-top:5%">
+
+    Free URL Shortner to create perfect URLs for your business</h2>
+<form name="form" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" style="margin-top: 5%;
+padding: 0 !important;
+height: 15%;
+margin-left: 23%;
+margin-right: 23%;">
+
+    <!-- <input type="url" class="urlInput" class="form-control" placeholder="Enter long URL" name="longUrl" id="InputURL" required [(ngModel)]="longUrl" ng-model="longUrl" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+    <button type="submit" class="generatebtn" mat-stroked-button color="accent">Generate URL</button> -->
+
+    <mat-form-field style=" margin-top: 10px;
+    width: 100%;">
+        <mat-label for="longUrl" style="font-weight: bold;font-size: 15px;">LongUrl</mat-label>
+
+        <div style=" display: flex;">
+
+            <input type="text" placeholder="Paste your Long URL here" type="url" style="font-size: 20px;" class="urlInput" name="longUrl" [(ngModel)]="longUrl" class="form-control" ngModel required email matInput id="longUrl">
+            <button type="submit" class="generatebtn" mat-raised-button color="primary">Generate URL</button>
+        </div>
+        <!-- <mat-error *ngIf="!isValidUrl">
+            Please enter a valid URL
+        </mat-error> -->
+        <mat-error *ngIf="!longUrl">
+            URL is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <br>
+
+</form>
+<mat-card class="shortUrlCard" *ngIf="isCardShow">
+    <h2 style="margin-left:15%;display: inline-block; color: blue;  word-wrap:normal;white-space: initial;" *ngIf="isShortUrl">Here is your short URL</h2>
+    <mat-card-content style="margin-left: 15%;white-space: break-spaces;margin-top: 3%;font-size:120%;">{{shortUrl}}
+    </mat-card-content>
+    <button *ngIf="!isLoggedIn " type="button" mat-stroked-button color="accent" style="float:right;margin-right: 4%;" [routerLink]="['/login']" routerLinkActive="active">
+        Login
+    </button>
+</mat-card>
+<h3 *ngIf=" lengthOfUrlsArray>0" style="margin-left:5.5%;margin-top: 5%;">Yout All Urls</h3>
+<table *ngIf="isLoggedIn && lengthOfUrlsArray>0" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="longUrl">
+        <th mat-header-cell *matHeaderCellDef> Long Urls </th>
+        <td mat-cell *matCellDef="let element"> {{element.longUrl}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="shortUrl">
+        <th mat-header-cell *matHeaderCellDef> Short Urls </th>
+        <td mat-cell *matCellDef="let element"> {{element.shortUrl}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<br><br>
+<h6>.</h6>
