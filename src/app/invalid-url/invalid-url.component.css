@@ -1,11 +1,4 @@
-/*
-VIEW IN FULL SCREEN MODE
-FULL SCREEN MODE: http://salehriaz.com/404Page/404.html
-
-DRIBBBLE: https://dribbble.com/shots/4330167-404-Page-Lost-In-Space
-*/
-
-@import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500');
+/* @import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500');
 @-moz-keyframes rocket-movement {
     100% {
         -moz-transform: translate(1200px, -600px);
@@ -134,13 +127,9 @@ body {
     font-family: 'Dosis', sans-serif;
     font-weight: 300;
     -webkit-user-select: none;
-    /* Safari 3.1+ */
     -moz-user-select: none;
-    /* Firefox 2+ */
     -ms-user-select: none;
-    /* IE 10+ */
     user-select: none;
-    /* Standard syntax */
 }
 
 .bg-purple {
@@ -172,7 +161,6 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    /*    overflow: hidden;*/
     display: flex;
     align-items: center;
 }
@@ -181,21 +169,6 @@ li {
     float: left;
     padding: 0px 15px;
 }
-
-
-/* li a {
-    display: block;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    letter-spacing: 2px;
-    font-size: 12px;
-    -webkit-transition: all 0.3s ease-in;
-    -moz-transition: all 0.3s ease-in;
-    -ms-transition: all 0.3s ease-in;
-    -o-transition: all 0.3s ease-in;
-    transition: all 0.3s ease-in;
-} */
 
 li a:hover {
     color: #ffcb39;
@@ -241,7 +214,6 @@ li a:hover {
 }
 
 .central-body {
-    /*    width: 100%;*/
     padding: 17% 5% 10% 5%;
     text-align: center;
 }
@@ -265,17 +237,12 @@ li a:hover {
     top: 20%;
     left: 15%;
     z-index: 90;
-    /*    animation: spin-earth 100s infinite linear both;*/
 }
 
 .object_moon {
     position: absolute;
     top: 12%;
     left: 25%;
-    /*
-    transform: rotate(0deg);
-    transition: transform ease-in 99999999999s;
-*/
 }
 
 .object_astronaut {
@@ -360,4 +327,4 @@ li a:hover {
     .central-body {
         padding-top: 25%;
     }
-}
+} */
