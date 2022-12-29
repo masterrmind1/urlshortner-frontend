@@ -1,8 +1,10 @@
 <app-header></app-header>
+<div style="margin-left:23%;margin-top:5%;font-size: 300%;font-weight: bolder;">
+    <p>
 
-<h2 style="margin-left:23%;margin-top:5%">
-
-    Free URL Shortner to create perfect URLs for your business</h2>
+        Free URL Shortner to create perfect URL's </p>
+    <p style="margin-left: 20%;margin-top: 3%;"> for your business</p>
+</div>
 <form name="form" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" style="margin-top: 5%;
 padding: 0 !important;
 height: 15%;
@@ -18,14 +20,21 @@ margin-right: 23%;">
 
         <div style=" display: flex;">
 
-            <input type="text" placeholder="Paste your Long URL here" type="url" style="font-size: 20px;" class="urlInput" name="longUrl" [(ngModel)]="longUrl" class="form-control" ngModel required email matInput id="longUrl">
+            <input type="text" #url="ngModel" placeholder="Paste your Long URL here" type="url" style="font-size: 20px;" class="urlInput" name="longUrl" [(ngModel)]="longUrl" class="form-control" required matInput id="longUrl" [class.is-invalid]="url.invalid && url.touched"
+                minlength="8">
             <button type="submit" class="generatebtn" mat-raised-button color="primary">Generate URL</button>
         </div>
         <!-- <mat-error *ngIf="!isValidUrl">
             Please enter a valid URL
         </mat-error> -->
-        <mat-error *ngIf="!longUrl">
+        <!-- <mat-error *ngIf="!longUrl">
             URL is <strong>required</strong>
+        </mat-error> -->
+        <mat-error *ngIf="url.touched  && !longUrl">
+            URL is Required
+        </mat-error>
+        <mat-error *ngIf="longUrl && !longUrl.includes('.com') ">
+            Please enter a Valid URL
         </mat-error>
     </mat-form-field>
     <br>
@@ -35,7 +44,7 @@ margin-right: 23%;">
     <h2 style="margin-left:15%;display: inline-block; color: blue;  word-wrap:normal;white-space: initial;" *ngIf="isShortUrl">Here is your short URL</h2>
     <mat-card-content style="margin-left: 15%;white-space: break-spaces;margin-top: 3%;font-size:120%;">{{shortUrl}}
     </mat-card-content>
-    <button *ngIf="!isLoggedIn " type="button" mat-stroked-button color="accent" style="float:right;margin-right: 4%;" [routerLink]="['/login']" routerLinkActive="active">
+    <button *ngIf="!isLoggedIn " type="button" style="float:right;margin-right: 4%;" [routerLink]="['/login']" routerLinkActive="active">
         Login
     </button>
 </mat-card>

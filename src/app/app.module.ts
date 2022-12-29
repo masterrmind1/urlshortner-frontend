@@ -29,6 +29,7 @@ import { SharedataService } from './services/sharedata.service';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatSelectModule} from '@angular/material/select';
+import { InvalidUrlComponent } from './invalid-url/invalid-url.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {MatSelectModule} from '@angular/material/select';
     HeaderComponent,
     LoginComponent,
     HomeComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    InvalidUrlComponent
   ],
   imports: [
     BrowserModule,MatSelectModule,

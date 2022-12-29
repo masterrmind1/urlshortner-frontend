@@ -21,7 +21,9 @@ input {
     border-radius: 12px;
     /* background-color: blue; */
     /* color: #fcfcfc; */
-    font-weight: bold;
+    font-weight: normal;
+    font-size: 130%;
+    background-color: rgb(240, 87, 17);
 }
 
 .example-button-row {
