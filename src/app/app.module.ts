@@ -30,7 +30,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatSelectModule} from '@angular/material/select';
 import { InvalidUrlComponent } from './invalid-url/invalid-url.component';
-import { HashLocationStrategy, LocationStrategy } from ‘@angular/common’;
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
