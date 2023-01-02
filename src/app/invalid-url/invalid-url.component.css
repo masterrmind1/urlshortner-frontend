@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500');
 @-moz-keyframes rocket-movement {
     100% {
         -moz-transform: translate(1200px, -600px);
@@ -327,4 +327,4 @@ li a:hover {
     .central-body {
         padding-top: 25%;
     }
-} */
+}

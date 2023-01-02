@@ -31,6 +31,7 @@
     "cli": "^1.0.1",
     "firebase": "^9.14.0",
     "firebase-tools": "^11.16.1",
+    "http-server": "^14.1.1",
     "rxjs": "~7.5.0",
     "sp-pnp-js": "^3.0.10",
     "url-validation": "^2.1.0",
