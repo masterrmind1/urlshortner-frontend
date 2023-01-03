@@ -16,6 +16,7 @@ export class HttpService {
   getUsers(){
     return this.http.get(`${this.apiUrl}/login`)
   }
+
  
   userSignup(body:signupTable) {
     console.log('servc')
@@ -52,6 +53,10 @@ export class HttpService {
     // .pipe(catchError(err=>
     //   this.catchAuthError(err)
     // ))
+  }
+  
+  getUserDataFromId(body){
+    return this.http.post(`${this.apiUrl}/getUserFromId`,body, {responseType:'text'})
   }
 
   userLogOut(body ,id){

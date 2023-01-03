@@ -44,7 +44,7 @@ margin-right: 23%;">
     <h2 style="margin-left:15%;display: inline-block; color: blue;  word-wrap:normal;white-space: initial;" *ngIf="isShortUrl">Here is your short URL</h2>
     <mat-card-content style="margin-left: 15%;white-space: break-spaces;margin-top: 3%;font-size:120%;">{{shortUrl}}
     </mat-card-content>
-    <button *ngIf="!isLoggedIn " type="button" style="float:right;margin-right: 4%;" [routerLink]="['/login']" routerLinkActive="active">
+    <button *ngIf="!isLoggedIn " mat-stroked-button color="accent" type="button" style="float:right;margin-right: 4%;" [routerLink]="['/login']" routerLinkActive="active">
         Login
     </button>
 </mat-card>
