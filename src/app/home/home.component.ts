@@ -91,7 +91,7 @@ export class HomeComponent implements OnInit {
           })
         } else {
           this.isCardShow = true
-          this.shortUrl = "Please Enter Valid URL"
+          this.shortUrl = "           Please Enter a Valid URL"
         }
       }
 

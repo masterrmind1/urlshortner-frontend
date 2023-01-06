@@ -31,6 +31,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatSelectModule} from '@angular/material/select';
 import { InvalidUrlComponent } from './invalid-url/invalid-url.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ResetPasswordByIdComponent } from './reset-password-by-id/reset-password-by-id.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     LoginComponent,
     HomeComponent,
     ResetPasswordComponent,
-    InvalidUrlComponent
+    InvalidUrlComponent,
+    ResetPasswordByIdComponent
   ],
   imports: [
     BrowserModule,MatSelectModule,
