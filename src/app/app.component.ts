@@ -14,7 +14,6 @@ export class AppComponent {
   isLoginOrNot:boolean
   constructor(private router:Router){
     this.isLoginOrNot=false;
-    console.log(this.router.url)
 
   }
 

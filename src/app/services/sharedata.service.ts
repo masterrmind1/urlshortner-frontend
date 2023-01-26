@@ -11,7 +11,6 @@ export class SharedataService {
   constructor() { }
 
   sendIsLoginValue(data){
-    console.log(data)
 this.isUserLoggedIn=data
   }
 

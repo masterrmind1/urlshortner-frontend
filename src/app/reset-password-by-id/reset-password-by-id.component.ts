@@ -37,7 +37,6 @@ export class ResetPasswordByIdComponent implements OnInit {
   onSubmit(form:NgForm){
   this.appHttp.resetPasswordbyId({email:this.emailId ,currentPassword:this.password, newPassword:this.newPassword},this.urlId)
     .subscribe(result=>{
-      console.log(result)
       this.httpStatus=result['result']
       if(result['status']==200){
         this.httpStatus=this.httpStatus+' now you can login'

@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
   lastName:string;
   ngOnInit(): void {
     
-    console.log(Boolean(localStorage.getItem('user')))
     if (Boolean(localStorage.getItem('user'))) {
       this.router.navigate(['/']);
     }
@@ -62,8 +61,7 @@ export class LoginComponent implements OnInit {
         .subscribe(result => {
           this.httpStatus = result['result']
           if (result['status'] == 200) {
-            console.log('dfjbgdfj')
-              localStorage.setItem('user', JSON.stringify({ email: this.email }))
+              localStorage.setItem('user', JSON.stringify({ email: this.email, firstName: this.firstName, lastName:this.lastName }))
               this.isLogin = true;
               this.sharedata.sendIsLoginValue(this.isLogin)
               this.router.navigate(['/']);
@@ -78,7 +76,6 @@ export class LoginComponent implements OnInit {
     }
   }
   onLogin() {
-    console.log(this.isLoginMode)
     this.router.navigate(['/']);
     this.isLogin = true;
   }
@@ -90,8 +87,6 @@ export class LoginComponent implements OnInit {
   forgetPassword() {
     this.appHttp.forgetPassword({ email: this.email }).subscribe((result) => {
       this.httpStatus = result['result']
-      console.log(result)
-
     })
   }
   cancel() {

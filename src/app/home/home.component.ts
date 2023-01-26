@@ -59,16 +59,15 @@ export class HomeComponent implements OnInit {
       } else {
         this.isValidUrl = urlValidator(form.form.value.longUrl)
         if (this.isValidUrl) {
-          console.log(form.form.value.longUrl)
           this.isValidUrl = urlValidator(this.longUrl)
           this.httpservice.generateURL({
             longUrl: this.longUrl, email: JSON.parse(localStorage.getItem('user')).
               email
           }).subscribe((a) => {
-            console.log(a, typeof (a))
             this.dataSource.push({email:JSON.parse(localStorage.getItem('user')).email, longUrl:a['longUrl'], shortUrl:a['result'], No:this.dataSource.length+1})
-            this.table.renderRows();
-            console.log(this.dataSource)
+            if(this.table){
+              this.table.renderRows();
+            }
             this.isCardShow = true;
             try {
               this.shortUrl =a['result']

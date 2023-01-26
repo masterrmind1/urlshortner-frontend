@@ -18,7 +18,6 @@ export class HttpService {
   }
 
   userSignup(body: signupTable) {
-    console.log('servc')
     return this.http.post(`${this.apiUrl}/signup`, body)
     // .pipe(catchError(err=>
     //   this.catchAuthError(err)

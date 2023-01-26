@@ -25,11 +25,8 @@ export class ResetPasswordComponent implements OnInit {
   id:any
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id)
         this.appHttp.getUserDataFromId({urlId:this.id}).subscribe((a)=>{
-          
-          this.emailId=JSON.parse(a).email
-          console.log(this.emailId)
+        this.emailId=JSON.parse(a).email
         })
   }
   backToLogin(){
@@ -40,14 +37,12 @@ export class ResetPasswordComponent implements OnInit {
   
   this.appHttp.resetPassword({email:this.emailId ,currentPassword:this.password, newPassword:this.newPassword},this.id)
     .subscribe(result=>{
-      console.log(result)
       this.httpStatus=result['result']
       if(result['status']==200){
         setTimeout(() => {
           this.router.navigate(['/'])
       }, 1000);      
       }
-      console.log(2)
       })
 
     if(this.password==this.ConfirmPassword){
