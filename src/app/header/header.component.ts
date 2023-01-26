@@ -31,7 +31,6 @@ export class HeaderComponent implements OnInit {
     this.http.getUserData({email:JSON.parse(localStorage.getItem('user')).email}).subscribe((a)=>{
       this.id=JSON.parse(a)['_id']
       this.firstName=JSON.parse(a).firstName
-      console.log(JSON.parse(a))
     })
   }
   

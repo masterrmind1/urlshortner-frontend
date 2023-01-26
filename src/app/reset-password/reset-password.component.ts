@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormsModule, NgForm, Validators} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+import {NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpService } from '../services/http.service';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import { SharedataService } from '../services/sharedata.service';
-import { emailObjTable } from '../object';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -29,9 +26,7 @@ export class ResetPasswordComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     console.log(this.id)
-    // this.emailId=JSON.parse(localStorage.getItem('user')).email
-    //     console.log(this.emailId)
-        this.appHttp.getUserDataFromId({id:this.id}).subscribe((a)=>{
+        this.appHttp.getUserDataFromId({urlId:this.id}).subscribe((a)=>{
           
           this.emailId=JSON.parse(a).email
           console.log(this.emailId)
@@ -50,9 +45,7 @@ export class ResetPasswordComponent implements OnInit {
       if(result['status']==200){
         setTimeout(() => {
           this.router.navigate(['/'])
-      }, 1000);
-        
-      
+      }, 1000);      
       }
       console.log(2)
       })

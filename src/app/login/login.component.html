@@ -3,6 +3,7 @@
 <mat-card *ngIf="httpStatus" style="width:40%;height: 20%; margin-left: 25%;margin-top: 2%;">
     <mat-card-content style="text-align: center;font-size: 130%;margin-top: 8%;">
         <mat-label>{{httpStatus}}</mat-label>
+
     </mat-card-content>
     <button style="float: right;margin-top: 2%;" mat-flat-button color="primary" (click)="backToLogin()">Close</button>
 </mat-card>
@@ -68,7 +69,7 @@
             <button type="button" mat-stroked-button color="accent" (click)="onSwitchMode()">
                 Switch To {{isLoginMode ?'Sign Up' :'Login'}}</button>
             <span>&nbsp;&nbsp;&nbsp;</span>
-            <button type="button" mat-stroked-button color="accent" [routerLink]="['/login']" routerLinkActive="active"> Cancel</button>
+            <button type="button" mat-stroked-button color="accent" [routerLink]="['/']" routerLinkActive="active"> Cancel</button>
             <span style="color:blue;cursor: pointer;" (click)="onForgetPassword()">&nbsp; &nbsp; Forget Password:</span>
         </div>
         <button [disabled]="emailFormControl.hasError('email') || emailFormControl.hasError('required')" *ngIf="isForgetPassword " type="button" mat-stroked-button color="accent" (click)="forgetPassword()">

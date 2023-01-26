@@ -71,7 +71,7 @@ export class HttpService {
       ))
   }
   generateURL(body) {
-    return this.http.post(`${this.apiUrl}/home/generate_URL`, body, { responseType: 'text' })
+    return this.http.post(`${this.apiUrl}/home/generate_URL`, body)
     // .pipe(catchError(err=>
     //   this.catchAuthError(err)
     // ))
@@ -82,8 +82,12 @@ export class HttpService {
     // .pipe(catchError(err=>
     //   this.catchAuthError(err)
     // ))
-
   }
+
+  // getExpireEmails(body){
+  //   console.log(body)
+  //   return this.http.post(`${this.apiUrl}/getExpiredUser`,body)
+  // }
 
   private requestOptions() {
     let headers;

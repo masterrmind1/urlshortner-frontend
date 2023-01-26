@@ -1,3 +1,58 @@
+.headline {
+    font-size: 300%;
+}
+
+@media screen and (min-width: 950px) and (max-width: 1050px) {
+    .headline {
+        font-size: 250%;
+    }
+    .cardContent {
+        font-size: 120% !important;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1150px) {
+    .cardContent {
+        font-size: 130% !important;
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 950px) {
+    .headline {
+        font-size: 200%;
+    }
+    .generatebtn {
+        padding-right: 12% !important;
+    }
+    .cardContent {
+        font-size: 120% !important;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 750px) {
+    .headline {
+        font-size: 170%;
+    }
+    .generatebtn {
+        padding-right: 18% !important;
+    }
+    .cardContent {
+        font-size: 100% !important;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 500px) {
+    .headline {
+        font-size: 140%;
+    }
+    .generatebtn {
+        padding-right: 30% !important;
+    }
+    .cardContent {
+        font-size: 100% !important;
+    }
+}
+
 input {
     border-radius: 12px;
     padding: 1.5%;
@@ -16,11 +71,9 @@ input {
 
 .generatebtn {
     padding: 12px;
-    padding-right: 4%;
+    padding-right: 8%;
     cursor: pointer;
     border-radius: 12px;
-    /* background-color: blue; */
-    /* color: #fcfcfc; */
     font-weight: normal;
     font-size: 130%;
     background-color: rgb(240, 87, 17);
@@ -33,22 +86,33 @@ input {
 
 .shortUrlCard {
     margin-left: 23%;
-    width: 40%;
+    width: 60%;
     margin-top: 3%;
     white-space: nowrap;
-    overflow: hidden;
+    overflow-y: hidden;
     position: relative;
     font-weight: bold;
+    padding: 2%;
 }
 
 .shortUrlCard1 {
     margin-left: 23%;
-    width: 40%;
+    width: 60%;
     margin-top: 2%;
     white-space: inherit;
     overflow: auto;
     position: relative;
     display: flex;
+}
+
+.cardContent {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: 150%;
+    margin-top: 1%;
 }
 
 table {
@@ -68,4 +132,23 @@ input:focus::placeholder {
 
 .mat-input-element {
     border: dimgray !important;
+}
+
+.example-container {
+    height: 400px;
+    width: 550px;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.mat-column-longUrl {
+    border-right: 1px solid gray;
+    padding-right: 24px;
+    text-align: center;
+}
+
+.mat-column-position {
+    border-right: 1px solid gray;
+    padding-right: 24px;
+    text-align: center;
 }

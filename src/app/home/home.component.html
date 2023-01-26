@@ -1,9 +1,10 @@
 <app-header></app-header>
-<div style="margin-left:23%;margin-top:5%;font-size: 300%;font-weight: bolder;">
-    <p>
+<div class="headline" style="margin-left:23%;margin-top:5%;font-weight: bolder;">
+    <p style="margin-left: 5%;">
 
-        Free URL Shortner to create perfect URL's </p>
-    <p style="margin-left: 20%;margin-top: 3%;"> for your business</p>
+        URL Shortner to create perfect URL's </p>
+    <p style="margin-left: 5%;margin-top: 3%;"> for your business. You can shorten</p>
+    <p style="margin-left: 16%;margin-top: 3%;"> upto 10 Urls for free.</p>
 </div>
 <form name="form" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" style="margin-top: 5%;
 padding: 0 !important;
@@ -40,36 +41,46 @@ margin-right: 23%;">
     <br>
 
 </form>
+<h2 style="margin-left:23% ;color: rgb(52, 47, 47);"></h2>
 <mat-card class="shortUrlCard" *ngIf="isCardShow">
-    <h2 style="margin-left:25%;display: inline-block; color: blue;  word-wrap:normal;white-space: initial;" *ngIf="isShortUrl">Here is your short URL</h2>
-    <mat-card-content style="margin-left: 18%;white-space: break-spaces;margin-top: 3%;font-size:140%;">{{shortUrl}}
+    <h2 style="margin-left: auto;
+    margin-right: auto; text-align: center; color: blue;
+    white-space: initial;word-wrap: break-word;
+  word-break: break-all" *ngIf="isShortUrl">Here is your short URL</h2>
+    <mat-card-content class="cardContent">{{shortUrl}}
     </mat-card-content>
     <button *ngIf="!isLoggedIn " mat-flat-button color="primary" type="button" style="float:right;margin-right: 4%;" [routerLink]="['/login']" routerLinkActive="active">
         Login
     </button>
 </mat-card>
-<h3 *ngIf=" lengthOfUrlsArray>0" style="margin-left:5.5%;margin-top: 5%;">Yout All Urls</h3>
-<table *ngIf="isLoggedIn && lengthOfUrlsArray>0" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<h2 *ngIf=" lengthOfUrlsArray>0" style="margin-left:5.5%;margin-top: 5%;font-weight: bolder;">Your All Urls</h2>
 
-    <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
+<table class="example-container mat-elevation-z8" tabindex="0" *ngIf="isLoggedIn && lengthOfUrlsArray>0" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!-- Position Column -->
     <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bolder;font-size: 120%;"> No. </th>
         <td mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </td>
     </ng-container>
 
-    <!-- Name Column -->
+    <!-- longUrl Column -->
     <ng-container matColumnDef="longUrl">
-        <th mat-header-cell *matHeaderCellDef> Long Urls </th>
-        <td mat-cell *matCellDef="let element"> {{element.longUrl}} </td>
+        <th style="margin-left: auto;
+        margin-right: auto; text-align: center;font-weight: bolder;font-size: 120%;" mat-header-cell *matHeaderCellDef> Long Urls </th>
+        <td style="margin-left: auto;
+        margin-right: auto; text-align: center; 
+        white-space: initial;word-wrap: break-word;
+      word-break: break-all" mat-cell *matCellDef="let element"> {{element.longUrl}} </td>
     </ng-container>
 
-    <!-- Weight Column -->
+    <!-- shortUrl Column -->
     <ng-container matColumnDef="shortUrl">
-        <th mat-header-cell *matHeaderCellDef> Short Urls </th>
-        <td mat-cell *matCellDef="let element"> {{element.shortUrl}} </td>
+        <th style="margin-left: auto;
+        margin-right: auto; text-align: center;font-weight: bolder;font-size: 120%;" mat-header-cell *matHeaderCellDef> Short Urls </th>
+        <td style="margin-left: auto;
+        margin-right: auto; text-align: center; 
+        white-space: initial;word-wrap: break-word;
+      word-break: break-all" mat-cell *matCellDef="let element"> {{element.shortUrl}} </td>
     </ng-container>
 
 

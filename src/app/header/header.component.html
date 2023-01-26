@@ -1,8 +1,7 @@
-<mat-toolbar>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    </button>
+<mat-toolbar style=" top: 0;position: sticky;">
+
     <a href="" (click)="moveToHome()" style="text-decoration:none;"><span routerLinkActive="active"
-        style="cursor: poineter;color: rgb(240, 87, 17); font-weight: bolder;font-size: 150%;">URL Shortner</span>
+        class="appName">URL Shortner</span>
     </a> <span class="example-spacer"></span>
     <button mat-icon-button class="menuForLogin" [matMenuTriggerFor]="menu" mat-icon-button aria-label="Example icon-button with a menu">
       <mat-icon  *ngIf="!isUser" id="dropdownIcon">more_vert</mat-icon>

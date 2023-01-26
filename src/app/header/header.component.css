@@ -1,10 +1,79 @@
 .menuForLogin {
-    margin-left: 70%;
+    margin-left: 75%;
     border: none;
+}
+
+.appName {
+    cursor: pointer;
+    color: rgb(240, 87, 17);
+    font-weight: bolder;
+    font-size: 150%;
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1250px) {
+    .menuForLogin {
+        margin-left: 68%;
+        border: none;
+    }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1149px) {
+    .menuForLogin {
+        margin-left: 63%;
+        border: none;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 850px) {
+    .menuForLogin {
+        margin-left: 52%;
+        border: none;
+    }
+}
+
+@media screen and (min-width: 550px) and (max-width: 700px) {
+    .menuForLogin {
+        margin-left: 40%;
+        border: none;
+    }
+    .appName {
+        font-size: 130%;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 550px) {
+    .menuForLogin {
+        margin-left: 25%;
+        border: none;
+    }
+    .appName {
+        font-size: 130%;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 450px) {
+    .menuForLogin {
+        margin-left: 13%;
+        border: none;
+    }
+    .appName {
+        font-size: 110%;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 300px) {
+    .menuForLogin {
+        margin-left: 8%;
+        border: none;
+    }
+    .appName {
+        font-size: 100%;
+    }
 }
 
 #dropdownIcon {
     font-size: 270% !important;
+    position: relative;
 }
 
 #dropdownIcon_login {
